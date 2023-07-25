@@ -10,13 +10,25 @@ return require('packer').startup(function(use)
   })
 
   use({
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    requires = { 'nvim-lua/plenary.nvim' }
+    'nvim-telescope/telescope.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    tag = '0.1.1'
   })
 
   use({
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' }
+  })
+
+  use({
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    requires = { 'nvim-tree/nvim-web-devicons' }
   })
 
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdates'})
