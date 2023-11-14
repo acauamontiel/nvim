@@ -49,6 +49,14 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
   vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set('n', '<leader>do', function() vim.diagnostic.config({
+    underline = true,
+    virtual_text = true
+  }) end, opts)
+  vim.keymap.set('n', '<leader>doo', function() vim.diagnostic.config({
+    underline = false,
+    virtual_text = false
+  }) end, opts)
 end)
 
 vim.g.diagnostics_active = true
@@ -67,6 +75,7 @@ vim.api.nvim_set_keymap('n', '<leader>dd', ':call v:lua.toggle_diagnostics()<CR>
   noremap = true,
   silent = true
 })
+
 
 lsp.setup()
 
