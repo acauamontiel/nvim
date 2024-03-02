@@ -7,14 +7,6 @@ function ColorMyPencils()
   ]])
 end
 
--- require('onedark').setup {
---     style = 'deep',
---     transparent = true,
---     lualine = {
---       transparent = true
---     }
--- }
-
 vim.cmd('colorscheme gotham')
 
 ColorMyPencils()
