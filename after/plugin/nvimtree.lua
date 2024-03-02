@@ -1,4 +1,4 @@
-require('nvim-tree').setup {
+require('nvim-tree').setup({
   renderer = {
     icons = {
       glyphs = {
@@ -10,11 +10,10 @@ require('nvim-tree').setup {
     }
   },
   filters = {
-    custom = {
-      '^\\.git'
-    }
+    dotfiles = false,
+    custom = { '^.git$' }
   }
-}
+})
 
 vim.keymap.set('n', '<leader>tt', vim.cmd.NvimTreeToggle)
 vim.keymap.set('n', '<leader>tf', vim.cmd.NvimTreeFindFile)
