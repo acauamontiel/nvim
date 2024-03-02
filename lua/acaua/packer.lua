@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
   use({
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    tag = '0.1.1'
+    tag = '0.1.5'
   })
 
   use({
@@ -21,14 +21,8 @@ return require('packer').startup(function(use)
   })
 
   use({
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        -- config
-      }
-    end,
-    requires = { 'nvim-tree/nvim-web-devicons' }
+    'startup-nvim/startup.nvim',
+    requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
   })
 
   use({
@@ -37,11 +31,13 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   })
 
-  use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdates'})
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdates',
+  })
+
   use('nvim-lua/plenary.nvim')
   use('whatyouhide/vim-gotham')
-  -- use('navarasu/onedark.nvim')
-  -- use('olivercederborg/poimandres.nvim')
   use('mbbill/undotree')
   use('storyn26383/vim-vue')
   use('digitaltoad/vim-pug')
@@ -52,28 +48,29 @@ return require('packer').startup(function(use)
   use('mg979/vim-visual-multi')
   use('acauamontiel/vim-stylus')
   use('stephenway/postcss.vim')
-  -- use('Yggdroot/indentLine')
+  use('Yggdroot/indentLine')
+  use('jparise/vim-graphql')
 
-  -- use {
-	  -- 'VonHeikemen/lsp-zero.nvim',
-	  -- branch = 'v1.x',
-	  -- requires = {
-		  -- -- LSP Support
-		  -- {'neovim/nvim-lspconfig'},
-		  -- -- {'williamboman/mason.nvim'},
-		  -- -- {'williamboman/mason-lspconfig.nvim'},
+  use ({
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
-		  -- -- Autocompletion
-		  -- {'hrsh7th/nvim-cmp'},
-		  -- -- {'hrsh7th/cmp-buffer'},
-		  -- {'hrsh7th/cmp-path'},
-		  -- -- {'saadparwaiz1/cmp_luasnip'},
-		  -- -- {'hrsh7th/cmp-nvim-lsp'},
-		  -- -- {'hrsh7th/cmp-nvim-lua'},
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
 
-		  -- -- Snippets
-		  -- -- {'L3MON4D3/LuaSnip'},
-		  -- -- {'rafamadriz/friendly-snippets'}
-	  -- }
-  -- }
+      -- Snippets
+      -- {'L3MON4D3/LuaSnip'},
+      -- {'rafamadriz/friendly-snippets'}
+    }
+  })
   end)
