@@ -5,8 +5,7 @@ return require('packer').startup(function(use)
 
   use({
     'nvim-tree/nvim-tree.lua',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    requires = { 'nvim-tree/nvim-web-devicons' }
   })
 
   use({
