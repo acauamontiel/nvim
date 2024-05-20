@@ -8,6 +8,8 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons' }
   })
 
+  -- Telescope requires `ripgrep` globally installed
+  -- https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
   use({
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
